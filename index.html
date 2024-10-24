@@ -55,18 +55,32 @@ End Google Tag Manager -->
     
 <br/>
 
-<button onclick="myFunction()">accept</button>
+
 
 <p id="demo2"></p>
 
-<script>
-function myFunction() {
-  const serviceConsents = [
-    {id: 'S1_9Vsuj-Q', consent: true}, // Google Ads
-]
-await __ucCmp.updateServicesConsents(serviceConsents);
+    <button onclick="updateConsent();">accept</button>
+<script> 
+    async function updateConsent() {
+    const serviceConsents = [
+        { id: 'HkocEodjb7', consent: true }, // Google Analytics
+        { id: 'S1_9Vsuj-Q', consent: false } // Google Ads
+    ];
+
+    try {
+        await __ucCmp.updateServicesConsents(serviceConsents);
+        await __ucCmp.saveConsents();
+        console.log('Service consents updated successfully');
+    } catch (error) {
+        console.error('Failed to update service consents:', error);
+    }
 }
-</script> 
+ 
+updateConsent();
+</script>
+
+
+
     
 <p>Embedding-Test.</p>
     
