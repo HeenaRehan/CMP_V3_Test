@@ -62,6 +62,8 @@ End Google Tag Manager -->
     <button onclick="updateConsent();">accept</button>
 <script> 
     async function updateConsent() {
+        const isInitialized = await window.__ucCmp.isInitialized()
+  if (isInitialized) {
     const serviceConsents = [
         { id: 'HkocEodjb7', consent: true }, // Google Analytics
         { id: 'S1_9Vsuj-Q', consent: false } // Google Ads
@@ -75,6 +77,7 @@ End Google Tag Manager -->
         console.error('Failed to update service consents:', error);
     }
 }
+    }
  
 updateConsent();
 </script>
