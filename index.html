@@ -52,41 +52,9 @@ End Google Tag Manager -->
   <body>
    
     <h1>Usercentrics CMP V3 Test Page</h1>
-    <img src="https://1nf2x118nwr23j3l7o2i40qd-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/190208-UCS-Logo-800px.png" alt="uc-logo">
     
 <br/>
-
-
-
-<p id="demo2"></p>
-
-    <button onclick="updateConsent();">accept</button>
-<script> 
-async function updateConsent() {
-    const serviceConsents = [
-        { id: 'S1_9Vsuj-Q', consent: false } // Google Ads
-    ];
-
-    try {
-        await __ucCmp.updateServicesConsents(serviceConsents);
-        await __ucCmp.saveConsents();
-        console.log('Service consents updated successfully');
-    } catch (error) {
-        console.error('Failed to update service consents:', error);
-    }
-}
- window.addEventListener('UC_UI_INITIALIZED', function(event) {
-  updateConsent();
-});
-</script>
-
-
-
-    
-<p>Embedding-Test.</p>
-    
-<div class="uc-embed" uc-layout="1" uc-data="all"></div>
-
+   
     
 </body>
 </html>
